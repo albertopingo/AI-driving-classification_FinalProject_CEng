@@ -1,9 +1,9 @@
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
-from sklearn.model_selection import train_test_split
 from keras.models import Sequential
 from keras.layers import LSTM, Dense
+import json
 
 class LSTM:
     def __init__(self):
@@ -15,24 +15,65 @@ class LSTM:
         self.y_test = None
         self.history = None
         
-    def load_data(self, file_path):
-        #csv or json
-        if file_path.endswith('.csv'):
-            data = pd.read_csv(file_path)
-        elif file_path.endswith('.json'):
-            data = pd.read_json(file_path)
-        else:
-            raise ValueError("Invalid file format")
     
-    def clean_data(self):
-        # Scale data
-        self.scaler.fit(data)
-        data = self.scaler.transform(data)
+    def prep_data(self, file_path):
+        # CSV file
+        if file_path.endswith('.csv'):
+            data = pd.read_csv(file_path, header=None)
+            print("Raw data: ")
+            print(data)
+            
+            # Drop the first 2 rows
+            data = data.iloc[2:]
+            
+            # Set the first row as the header and drop it
+            data.columns = data.iloc[0]
+            data = data.iloc[1:]     
+            
+            # Select specific columns
+            desired_columns = ['accelerometerXAxis', 'accelerometerYAxis', 'accelerometerZAxis', 'gyroscopeXAxis', 'gyroscopeYAxis', 'gyroscopeZAxis', 'speedKmh']
+            data = data.loc[:, desired_columns]
+            
+            # Drop empty columns
+            data = data.dropna(axis=1, how='all')
+            
+            # Drop rows with all NaN values
+            data = data.dropna(how='all')
+                        
+            print("Final data: ")
+            print(data)
+            
+            # scale the data
+            scaledData = self.scaler.fit_transform(data)
+            
+        # JSON file
+        elif file_path.endswith('.json'):
+            with open(file_path) as file:
+                data = json.load(file)
+            print("Raw data: ")
+            print(data)
+            
+            # Extract the captured data
+            capturedData = data['capturedData']
+            
+            # Convert to dataframe
+            capturedData = pd.DataFrame(capturedData)
+            
+            # Drop unnecessary columns
+            capturedData = capturedData.drop(['id', 'Latitude', 'Longitude', 'createdAt'], axis=1)
+            print("Final data: ")
+            print(capturedData)
+                        
+            scaledData = self.scaler.fit_transform(capturedData)
+            
+            
+        else:
+            raise ValueError("Invalid file format")     
         
-        # Split data
-        X = data[:, :-1]
-        y = data[:, -1]
-        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y, test_size=0.2)
+        print("Scaled data: ")
+        print(scaledData)
+        
+        
         
     def build_model(self):
         self.model = Sequential()
@@ -50,9 +91,8 @@ class LSTM:
         self.model.save(file_path)
         
     def run(self, file_path):
-        self.load_data(file_path)
-        self.clean_data()
-        self.build_model()
-        self.train_model()                
+        self.prep_data(file_path)
+        # self.build_model()
+        # self.train_model()                
         
         
