@@ -21,7 +21,10 @@ The project consists of Python scripts for data loading, preprocessing, model bu
 
 ## How to Run the Project
 1. Clone the repository.
-2. Install the required dependencies using `pip install -r requirements.txt`.
-3. Ensure that the dataset files are available in the specified paths or adjust the paths accordingly in the script.
-4. Run the `main.py` script.
+2. Ensure that the dataset files are available in the specified paths or adjust the paths accordingly in the script.
+3. Run the `main.py` script.
+
+## Contributors
+- Alberto Pingo ([@albertopingo](https://github.com/albertopingo))
+- João Castro ([@jcastroo](https://github.com/jcastroo))
 
