@@ -1,4 +1,4 @@
-# LSTM Time Series Prediction Model
+# AI Driving Classification
 
 ## Description
 This project implements a Long Short-Term Memory (LSTM) neural network model for time series prediction using accelerometer and gyroscope data. The model is trained on datasets captured from various sources under different motion scenarios.
