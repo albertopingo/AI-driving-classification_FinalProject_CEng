@@ -1,0 +1,9 @@
+media de acelaracao em relacao ao tempo
+
+
+mudar de sampling temporal
+winwig
+media do 4, tudo na mesma escala
+
+
+spark meta classes
