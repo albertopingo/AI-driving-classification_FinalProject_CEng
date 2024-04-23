@@ -1,0 +1,158 @@
+{
+"id": 22,
+"label": "brake aggressive 40kmh",
+"createdAt": "2023-04-26 13:35:17.133",
+"tags": {
+"id": 22,
+"captureSpeed": 250.0,
+"gravityFilter": true,
+"averageFilter": "Low-Pass Filter",
+"elapsedTimeInSeconds": 3
+},
+"device": {
+"id": 1,
+"name": "Pieter",
+"manufacturer": "samsung",
+"brand": "samsung",
+"model": "SM-A515F",
+"accelerometerMaxRange": 78.45320129394531,
+"accelerometerName": "LSM6DSL Accelerometer",
+"accelerometerMinDelay": 2000,
+"gyroscopeMaxRange": 17.45326042175293,
+"gyroscopeName": "LSM6DSL Gyroscope",
+"gyroscopeMinDelay": 2000
+},
+"capturedData": [
+{
+"id": 634,
+"accelerometerXAxis": 0.20829838514328003,
+"accelerometerYAxis": -0.04010230302810669,
+"accelerometerZAxis": -0.03338813781738281,
+"gyroscopeXAxis": -0.014049900695681572,
+"gyroscopeYAxis": -0.021991148591041565,
+"gyroscopeZAxis": 0.00733038317412138,
+"Latitude": 39.83796691894531,
+"Longitude": -8.592058181762695,
+"speedKmh": 38.5,
+"timestamp": "2023-04-26 13:35:17.180"
+},
+{
+"id": 635,
+"accelerometerXAxis": -0.13843241333961487,
+"accelerometerYAxis": -0.1817675232887268,
+"accelerometerZAxis": -0.29224681854248047,
+"gyroscopeXAxis": 0.0024434609804302454,
+"gyroscopeYAxis": -0.00733038317412138,
+"gyroscopeZAxis": -0.005497787147760391,
+"Latitude": 39.83796691894531,
+"Longitude": -8.592058181762695,
+"speedKmh": 38.5,
+"timestamp": "2023-04-26 13:35:17.433"
+},
+{
+"id": 636,
+"accelerometerXAxis": -0.5095975399017334,
+"accelerometerYAxis": -3.788545846939087,
+"accelerometerZAxis": 0.15374469757080078,
+"gyroscopeXAxis": -0.06108652427792549,
+"gyroscopeYAxis": 0.030543262138962746,
+"gyroscopeZAxis": 0.01038470957428217,
+"Latitude": 39.83796691894531,
+"Longitude": -8.592058181762695,
+"speedKmh": 38.5,
+"timestamp": "2023-04-26 13:35:17.686"
+},
+{
+"id": 637,
+"accelerometerXAxis": 1.9923679828643799,
+"accelerometerYAxis": -8.399012565612793,
+"accelerometerZAxis": 1.5790901184082031,
+"gyroscopeXAxis": 0.07819075137376785,
+"gyroscopeYAxis": 0.01466076634824276,
+"gyroscopeZAxis": -0.05253441259264946,
+"Latitude": 39.83797836303711,
+"Longitude": -8.592184066772461,
+"speedKmh": 38.900001525878906,
+"timestamp": "2023-04-26 13:35:17.939"
+},
+{
+"id": 638,
+"accelerometerXAxis": -0.13977836072444916,
+"accelerometerYAxis": -6.4353132247924805,
+"accelerometerZAxis": -0.833470344543457,
+"gyroscopeXAxis": -0.014049900695681572,
+"gyroscopeYAxis": 0.006108651868999004,
+"gyroscopeZAxis": -0.08246681094169617,
+"Latitude": 39.83797836303711,
+"Longitude": -8.592184066772461,
+"speedKmh": 38.900001525878906,
+"timestamp": "2023-04-26 13:35:18.205"
+},
+{
+"id": 639,
+"accelerometerXAxis": 0.15492770075798035,
+"accelerometerYAxis": -6.495855331420898,
+"accelerometerZAxis": 0.3004627227783203,
+"gyroscopeXAxis": 0.009162978269159794,
+"gyroscopeYAxis": 0.01771509274840355,
+"gyroscopeZAxis": -0.042760565876960754,
+"Latitude": 39.83797836303711,
+"Longitude": -8.592184066772461,
+"speedKmh": 38.900001525878906,
+"timestamp": "2023-04-26 13:35:18.457"
+},
+{
+"id": 640,
+"accelerometerXAxis": 1.159395456314087,
+"accelerometerYAxis": -6.789844989776611,
+"accelerometerZAxis": 0.29842567443847656,
+"gyroscopeXAxis": -0.01160643994808197,
+"gyroscopeYAxis": -0.012217304669320583,
+"gyroscopeZAxis": -0.033597588539123535,
+"Latitude": 39.83797836303711,
+"Longitude": -8.592184066772461,
+"speedKmh": 38.900001525878906,
+"timestamp": "2023-04-26 13:35:18.710"
+},
+{
+"id": 641,
+"accelerometerXAxis": 0.498439222574234,
+"accelerometerYAxis": -7.127138614654541,
+"accelerometerZAxis": 0.11285400390625,
+"gyroscopeXAxis": -0.004886921960860491,
+"gyroscopeYAxis": 0.003054325934499502,
+"gyroscopeZAxis": 0.01160643994808197,
+"Latitude": 39.83797836303711,
+"Longitude": -8.59225845336914,
+"speedKmh": 10.800000190734863,
+"timestamp": "2023-04-26 13:35:18.976"
+},
+{
+"id": 642,
+"accelerometerXAxis": -0.1739594042301178,
+"accelerometerYAxis": 2.893355131149292,
+"accelerometerZAxis": 0.6893196105957031,
+"gyroscopeXAxis": 0.030543262138962746,
+"gyroscopeYAxis": 0.02382374368607998,
+"gyroscopeZAxis": -0.01038470957428217,
+"Latitude": 39.83797836303711,
+"Longitude": -8.59225845336914,
+"speedKmh": 10.800000190734863,
+"timestamp": "2023-04-26 13:35:19.228"
+},
+{
+"id": 643,
+"accelerometerXAxis": -0.011058896780014038,
+"accelerometerYAxis": -0.949986457824707,
+"accelerometerZAxis": -1.036722183227539,
+"gyroscopeXAxis": 0.02626720629632473,
+"gyroscopeYAxis": 0.00733038317412138,
+"gyroscopeZAxis": 0.0012217300245538354,
+"Latitude": 39.83797836303711,
+"Longitude": -8.59225845336914,
+"speedKmh": 10.800000190734863,
+"timestamp": "2023-04-26 13:35:19.481"
+}
+]
+
+}
