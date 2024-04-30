@@ -1,8 +1,11 @@
 from argparse import ArgumentParser
 import os
+import csv
 
 from config import Config
 from dataprocessing import *
+
+import numpy as np
 
 def main(args):    
     config = Config()
@@ -14,7 +17,24 @@ def main(args):
     # Data preprocessing
     dataset, dataset_labels = load_raw_data(config.ACCEL_DIR)
     
-    sequenced_data(dataset, config.WINDOW_SIZE, config.WINDOW_OFFSET)
+    sequences, labels = sequenced_data(dataset, config.WINDOW_SIZE, config.WINDOW_OFFSET)
+    
+    # for i in range(len(sequences)):
+    #     print('Sequence: ', sequences[i])
+    #     print('Label: ', labels[i])
+    
+    # print('Sequences: ', sequences)
+    
+    sequences = np.concatenate(sequences, axis=0)
+    
+    with open('sequences.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        # numpy ndarray
+        writer.writerows(sequences)
+        
+        
+        
+        
     
     
 

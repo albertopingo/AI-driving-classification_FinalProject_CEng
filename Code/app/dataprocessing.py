@@ -37,7 +37,7 @@ def load_raw_data(path):
                 file_data = pd.DataFrame(file_data)           
                 
                 # Drop unnecessary columns
-                file_data = file_data.drop(['id', 'gyroscopeXAxis', 'gyroscopeYAxis', 'gyroscopeZAxis'], axis=1)
+                file_data = file_data.drop(['id', 'gyroscopeXAxis', 'gyroscopeYAxis', 'gyroscopeZAxis', 'Latitude', 'Longitude', 'createdAt', 'timestamp'], axis=1, errors='ignore')
                 
                 # Rename speed Km/h to speed
                 file_data.rename(columns={'speed Km/h': 'speed'}, inplace=True)
@@ -45,7 +45,8 @@ def load_raw_data(path):
                 
                 # Drop timestamp
                 file_data = file_data.drop(['createdAt'], axis=1, errors='ignore')
-                file_data = file_data.drop(['timestamp'], axis=1, errors='ignore')                    
+                file_data = file_data.drop(['timestamp'], axis=1, errors='ignore')    
+                            
                 
                 if car == 'BMW':
                     data_bmw.append(file_data.copy())
@@ -72,20 +73,16 @@ def sequenced_data(data, window_size = 4, window_offset = 2):
 
     for i in range(len(data)):
         for j in range(0, len(data[i]) - window_size + 1, window_offset):
-            sequence = data[i].iloc[j:j+window_size].values
+            sequence = data[i].iloc[j:j+window_size].copy()
+            sequence['Label'] = np.nan
+            
+            label = labelling(sequence)
+            
+            sequence['Label'] = label
+            
+            print('sequenced_data: ')
+            print(sequence)
             sequences.append(sequence)
-            
-            # Calculate mean of accelerometerYAxis in the current window
-            mean = np.mean(data[i][j:j+window_size]['accelerometerYAxis'])
-            
-            # Determine label based on the mean value
-            if mean > 0.5:
-                label = 'aggressive'
-            elif mean > 0.2:
-                label = 'normal'
-            else:
-                label = 'slow'
-            
             labels.append(label)
 
     sequences = np.array(sequences)
@@ -96,6 +93,8 @@ def sequenced_data(data, window_size = 4, window_offset = 2):
     print('Labels:')
     print(labels)
     
+    return sequences, labels
+    
 
 def encode_labels(labels):
     # Encode the labels
@@ -103,3 +102,22 @@ def encode_labels(labels):
     
     return encoded_labels
 
+def labelling(data):
+    sum = 0
+    
+    
+    # first row is the header
+    for row in data.itertuples(index=False):       
+        accelerometer_y_value = row[1]
+        # print(accelerometer_y_value)
+        
+        
+        if accelerometer_y_value > 0:
+            sum += accelerometer_y_value
+    
+    # Print the total sum of positive values
+    print("Sum of positive values in column 2:", sum)
+    
+    label = 'aggressive' if sum > 1 else 'normal' if sum > 0.3 else 'slow'
+    
+    return label
