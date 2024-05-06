@@ -23,12 +23,23 @@ def load_raw_data(path):
     labels_bmw = []
     labels_honda = []
     
+    file_order_bmw = []
+    file_order_honda = []
+    
     for root, dirs, files in os.walk(path):
         for file in files:
             if file.endswith('.json'):
+                                
                 car = os.path.basename(root).split()[0].upper()            
                 label = os.path.basename(os.path.dirname(root))
                 # print(f'Processing {car} {label} {file}...')
+                if car == 'BMW':
+                    file_order_bmw.append(file)
+                    np.savetxt('file_order_bmw.txt', file_order_bmw, fmt='%s')
+                elif car == 'HONDA':
+                    file_order_honda.append(file)
+                    np.savetxt('file_order_honda.txt', file_order_honda, fmt='%s')
+                
                 
                 file_data = json.load(open(os.path.join(root, file)))
                 file_data = file_data['capturedData']
@@ -65,7 +76,7 @@ def load_raw_data(path):
     dataset = data_bmw + data_honda
     dataset_labels = labels_bmw + labels_honda
     
-    return dataset, dataset_labels
+    return dataset, dataset_labels, data_bmw, data_honda
 
 def sequenced_data(data, window_size = 4, window_offset = 2):
     sequences = []
@@ -80,18 +91,23 @@ def sequenced_data(data, window_size = 4, window_offset = 2):
             
             sequence['Label'] = label
             
-            print('sequenced_data: ')
-            print(sequence)
+            # print('sequenced_data: ')
+            # print(sequence)
             sequences.append(sequence)
+            # add space between sequences that works with np.concatenate
+            space_row = pd.DataFrame({col: [0] for col in sequence.columns})
+            sequences.append(space_row)
+            
             labels.append(label)
 
-    sequences = np.array(sequences)
+    sequences = np.concatenate(sequences, axis=0)
+
     labels = np.array(labels)
 
-    print('Sequences:')
-    print(sequences)
-    print('Labels:')
-    print(labels)
+    # print('Sequences:')
+    # print(sequences)
+    # print('Labels:')
+    # print(labels)
     
     return sequences, labels
     
@@ -116,7 +132,7 @@ def labelling(data):
             sum += accelerometer_y_value
     
     # Print the total sum of positive values
-    print("Sum of positive values in column 2:", sum)
+    # print("Sum of positive values in column 2:", sum)
     
     label = 'aggressive' if sum > 1 else 'normal' if sum > 0.3 else 'slow'
     
