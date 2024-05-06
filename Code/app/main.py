@@ -15,25 +15,32 @@ def main(args):
     print("Acceleration directory: ", config.ACCEL_DIR)
     
     # Data preprocessing
-    dataset, dataset_labels = load_raw_data(config.ACCEL_DIR)
+    dataset, dataset_labels, data_bmw, data_honda = load_raw_data(config.ACCEL_DIR)
     
-    sequences, labels = sequenced_data(dataset, config.WINDOW_SIZE, config.WINDOW_OFFSET)
+    sequences_full, labels = sequenced_data(dataset, config.WINDOW_SIZE, config.WINDOW_OFFSET)
+    sequences_bmw, labels_bmw = sequenced_data(data_bmw, config.WINDOW_SIZE, config.WINDOW_OFFSET)
+    sequences_honda, labels_honda = sequenced_data(data_honda, config.WINDOW_SIZE, config.WINDOW_OFFSET)
+          
+    headers = ['AccelerometerX', 'AccelerometerY', 'AccelerometerZ', 'Speed', 'Label']
     
-    # for i in range(len(sequences)):
-    #     print('Sequence: ', sequences[i])
-    #     print('Label: ', labels[i])
     
-    # print('Sequences: ', sequences)
-    
-    sequences = np.concatenate(sequences, axis=0)
-    
-    with open('sequences.csv', 'w', newline='') as file:
+    with open('sequences_full.csv', 'w', newline='') as file:
         writer = csv.writer(file)
-        # numpy ndarray
-        writer.writerows(sequences)
         
+        writer.writerow(headers)
+        writer.writerows(sequences_full)
+    
+    with open('sequences_bmw.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
         
+        writer.writerow(headers)
+        writer.writerows(sequences_bmw)
+    
+    with open('sequences_honda.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
         
+        writer.writerow(headers)
+        writer.writerows(sequences_honda)
         
     
     
