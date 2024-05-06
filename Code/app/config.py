@@ -18,3 +18,8 @@ class Config(object):
         self.BATCH_SIZE = 32
         
         # LSTM
+        self.HIDDEN_UNITS = 50
+        self.TIMESTEPS = 1
+        self.NUM_FEATURES = 3
+        self.NUM_CLASSES = 6
+        
