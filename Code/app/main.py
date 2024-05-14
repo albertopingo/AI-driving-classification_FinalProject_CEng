@@ -22,14 +22,30 @@ def main(args):
     sequences_honda, labels_honda = sequenced_data(data_honda, config.WINDOW_SIZE, config.WINDOW_OFFSET)
           
     headers = ['AccelerometerX', 'AccelerometerY', 'AccelerometerZ', 'Speed', 'Label']
+
+    save_only_natural_csv(data_bmw, 'bmw')
+    save_only_natural_csv(data_honda, 'honda')
+
     
-    
-    with open('sequences_full.csv', 'w', newline='') as file:
-        writer = csv.writer(file)
-        
-        writer.writerow(headers)
-        writer.writerows(sequences_full)
-    
+    # Load the preprocessed dataset
+    preprocessed_dataset_bmw = load_preprocessed_data('datasets_tratados/bmw_onlynatural.csv')
+    sum_values(preprocessed_dataset_bmw,dataset_name='bmw') 
+
+    preprocessed_dataset_honda = load_preprocessed_data('datasets_tratados/honda_onlynatural.csv')
+    sum_values(preprocessed_dataset_honda,dataset_name='honda') 
+
+    preprocessed_dataset_bmw_somatorio = load_preprocessed_data('somatorios/bmw_sum_values.csv')
+    preprocessed_dataset_honda_somatorio = load_preprocessed_data('somatorios/honda_sum_values.csv')
+
+    # create_sequences(preprocessed_dataset_bmw_somatorio,dataset_name='bmw')
+    # create_sequences(preprocessed_dataset_honda_somatorio,dataset_name='honda')
+
+    max_values(preprocessed_dataset_bmw)
+
+    classify_agressive(preprocessed_dataset_bmw,preprocessed_dataset_bmw_somatorio,dataset_name='bmw')
+    classify_agressive(preprocessed_dataset_honda,preprocessed_dataset_honda_somatorio,dataset_name='honda')
+
+
     with open('sequences_bmw.csv', 'w', newline='') as file:
         writer = csv.writer(file)
         
@@ -42,7 +58,8 @@ def main(args):
         writer.writerow(headers)
         writer.writerows(sequences_honda)
         
-    
+
+
     
 
 if __name__ == "__main__":

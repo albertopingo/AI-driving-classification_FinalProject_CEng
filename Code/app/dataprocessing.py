@@ -2,14 +2,97 @@ import numpy as np
 import os
 import json
 import pandas as pd
-
+import csv
 
 def load_preprocessed_data(path):
     # Load preprocessed data from a file
-    preprocessed_data = []
+    preprocessed_data = pd.read_csv(path)
     
     return preprocessed_data
 
+
+def remove_negatives_csv(data):
+    for i in range(len(data)):
+        for j in range(len(data[i])):
+            for k in range(len(data[i].columns)):
+                data[i].iloc[j, k] = np.where(data[i].iloc[j, k] < 0, 0, data[i].iloc[j, k])
+    return data
+
+
+def save_only_natural_csv(data,dataset_name):
+    data = remove_negatives_csv(data)
+    for i in range(len(data)):
+        data[i].to_csv(f'datasets_tratados\{dataset_name}_onlynatural.csv', index=False)
+    pass
+
+def sum_values(data,dataset_name):
+    sums = []
+
+    for i in range(0, len(data), 4):
+        chunk = data.iloc[i:i+4]  
+        chunk_sum = chunk['accelerometerXAxis'] + chunk['accelerometerYAxis'] + chunk['accelerometerZAxis']
+        sums.append(chunk_sum.sum())  
+
+    with open(f'somatorios\{dataset_name}_sum_values.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['Sum'])
+
+        for s in sums:
+            writer.writerow([s])
+
+    return sums
+
+
+# def create_sequences(data,dataset_name):
+#     sequences = []
+#     for i in range(0, len(data), 4):
+#         sequence = data.iloc[i:i+4]
+#         sequences.append(sequence)
+    
+#     with open(f'sequencias\sequences_{dataset_name}.csv', 'w', newline='') as file:
+#         writer = csv.writer(file)
+#         writer.writerow(['Sum'])
+
+#         for s in sequences:
+#             writer.writerow(s)
+    
+#     pass
+
+
+def max_values(data):
+    max_value = data['accelerometerXAxis'].max()
+    return max_value
+
+def trashold_values(max_value):
+    trashold = max_value * 0.50
+
+    return trashold
+
+def define_agressive(data, trashold):
+    labels = []
+    
+    for i in range(len(data)):
+        if data.iloc[i]['Sum'] > trashold:
+            print('trashold_value: ', trashold, 'data[i] value: ', data.iloc[i]['Sum'])
+            labels.append('agressive')
+        else:
+            print('trashold_value: ', trashold, 'data[i] value: ', data.iloc[i]['Sum'])
+            labels.append('not agressive')
+    return labels
+
+def classify_agressive(data_tratada, data, dataset_name):
+    max_value = max_values(data_tratada)
+    trashold = trashold_values(max_value)
+    labels = define_agressive(data, trashold)  
+    with open(f'datasets_classificados\{dataset_name}_classificacao.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['Sum', 'Label'])
+
+        for i in range(len(data)):
+            writer.writerow([data.iloc[i]['Sum'], labels[i]])
+ 
+    return labels 
+ 
 def save_preprocessed_data(preprocessed_data):
     # Save the preprocessed data to a file
     
