@@ -1,8 +1,0 @@
-<Measurements BMW e36>
-acceleration normal 0km 80kmh: 270m
-brake normal 80kmh 0kmh0: 210m
-
-
-<Measurements Honda Jazz>
-acceleration normal 0km 80kmh: 420m
-brake normal 80kmh 0kmh0: 180m

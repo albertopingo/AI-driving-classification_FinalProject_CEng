@@ -1,0 +1,22 @@
+# 1 Identificar manobras | Classes = nº manobras
+	Sem fazer distinção de agressividade.
+
+Acceleration
+Brake
+Turn Left
+Turn Right
+Roundabout
+..
+
+
+# 2 - Identificar e Classificar manobras | Classes = 3 x nº manobras
+Accel_Slow
+Accel_Normal
+Accel_Agressive
+Brake_Slow
+Brake_Normal
+Brake_Agressive
+
+# 3 - Classificar a condução no geral | Classes = 3
+
+Juntar todos os Agressives, Normal, Slow na mesma classe

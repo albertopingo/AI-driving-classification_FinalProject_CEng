@@ -1,0 +1,158 @@
+{
+"id": 10,
+"label": "brake aggressive 30kmh",
+"createdAt": "2023-05-05 22:00:11.498",
+"tags": {
+"id": 57,
+"captureSpeed": 250.0,
+"gravityFilter": true,
+"averageFilter": "Low-Pass Filter",
+"elapsedTimeInSeconds": 3
+},
+"device": {
+"id": 1,
+"name": "Pieter",
+"manufacturer": "samsung",
+"brand": "samsung",
+"model": "SM-A515F",
+"accelerometerMaxRange": 78.45320129394531,
+"accelerometerName": "LSM6DSL Accelerometer",
+"accelerometerMinDelay": 2000,
+"gyroscopeMaxRange": 17.45326042175293,
+"gyroscopeName": "LSM6DSL Gyroscope",
+"gyroscopeMinDelay": 2000
+},
+"capturedData": [
+{
+"id": 341,
+"accelerometerXAxis": -0.087491274,
+"accelerometerYAxis": -0.311966509,
+"accelerometerZAxis": 0.170865059,
+"gyroscopeXAxis": -0.014049901,
+"gyroscopeYAxis": 0.008552114,
+"gyroscopeZAxis": 0.006719518,
+"Latitude": 39.81716781388968 ,
+"Longitude": -8.625423610210419 ,
+"speedKmh": 24.9 ,
+"timestamp": "2023-05-05 22:00:11.538"
+},
+{
+"id": 342,
+"accelerometerXAxis": 0.142135501,
+"accelerometerYAxis": -0.534942865,
+"accelerometerZAxis": 0.427576065,
+"gyroscopeXAxis": -0.007941248,
+"gyroscopeYAxis": -0.006108652,
+"gyroscopeZAxis": 0.015271631,
+"Latitude": 39.81714719440788 ,
+"Longitude": -8.625340042635798 ,
+"speedKmh": 26.1 ,
+"timestamp": "2023-05-05 22:00:11.788"
+},
+{
+"id": 343,
+"accelerometerXAxis": -0.054825842,
+"accelerometerYAxis": -1.783150673,
+"accelerometerZAxis": 0.093835831,
+"gyroscopeXAxis": -0.035430185,
+"gyroscopeYAxis": -0.005497787,
+"gyroscopeZAxis": 0.016493361,
+"Latitude": 39.81714719440788 ,
+"Longitude": -8.625340042635798 ,
+"speedKmh": 26.1 ,
+"timestamp": "2023-05-05 22:00:12.038"
+},
+{
+"id": 344,
+"accelerometerXAxis": 0.188845903,
+"accelerometerYAxis": -6.084095955,
+"accelerometerZAxis": 0.617209435,
+"gyroscopeXAxis": -0.015882496,
+"gyroscopeYAxis": -0.026267206,
+"gyroscopeZAxis": 0.028710667,
+"Latitude": 39.81714719440788 ,
+"Longitude": -8.625340042635798 ,
+"speedKmh": 26.1 ,
+"timestamp": "2023-05-05 22:00:12.289"
+},
+{
+"id": 345,
+"accelerometerXAxis": 1.080789566,
+"accelerometerYAxis": -7.616377354,
+"accelerometerZAxis": 0.520902634,
+"gyroscopeXAxis": 0.015271631,
+"gyroscopeYAxis": -0.073914692,
+"gyroscopeZAxis": 0.000000000,
+"Latitude": 39.81714719440788 ,
+"Longitude": -8.625340042635798 ,
+"speedKmh": 26.1 ,
+"timestamp": "2023-05-05 22:00:12.542"
+},
+{
+"id": 346,
+"accelerometerXAxis": 0.308324069,
+"accelerometerYAxis": -6.476174355,
+"accelerometerZAxis": 0.208408356,
+"gyroscopeXAxis": -0.028099801,
+"gyroscopeYAxis": -0.008552114,
+"gyroscopeZAxis": 0.012828170,
+"Latitude": 39.8171279579401 ,
+"Longitude": -8.625264102593064 ,
+"speedKmh": 23.8 ,
+"timestamp": "2023-05-05 22:00:12.793"
+},
+{
+"id": 347,
+"accelerometerXAxis": 0.192153126,
+"accelerometerYAxis": 3.487636566,
+"accelerometerZAxis": 0.748892784,
+"gyroscopeXAxis": 0.053145275,
+"gyroscopeYAxis": 0.012217305,
+"gyroscopeZAxis": -0.000610865,
+"Latitude": 39.8171279579401 ,
+"Longitude": -8.625264102593064 ,
+"speedKmh": 23.8 ,
+"timestamp": "2023-05-05 22:00:13.043"
+},
+{
+"id": 348,
+"accelerometerXAxis": 0.103790998,
+"accelerometerYAxis": 1.234532833,
+"accelerometerZAxis": -0.672993660,
+"gyroscopeXAxis": 0.000000000,
+"gyroscopeYAxis": 0.014660766,
+"gyroscopeZAxis": -0.012217305,
+"Latitude": 39.8171279579401 ,
+"Longitude": -8.625264102593064 ,
+"speedKmh": 23.8 ,
+"timestamp": "2023-05-05 22:00:13.293"
+},
+{
+"id": 349,
+"accelerometerXAxis": 0.027864873,
+"accelerometerYAxis": 0.309938610,
+"accelerometerZAxis": 0.729231834,
+"gyroscopeXAxis": -0.020769419,
+"gyroscopeYAxis": 0.007330383,
+"gyroscopeZAxis": -0.003054326,
+"Latitude": 39.8171279579401 ,
+"Longitude": -8.625264102593064 ,
+"speedKmh": 23.8 ,
+"timestamp": "2023-05-05 22:00:13.543"
+},
+{
+"id": 350,
+"accelerometerXAxis": 0.080565482,
+"accelerometerYAxis": 0.185915232,
+"accelerometerZAxis": -0.105471611,
+"gyroscopeXAxis": 0.004886922,
+"gyroscopeYAxis": 0.001221730,
+"gyroscopeZAxis": -0.006719518,
+"Latitude": 39.81711714528501 ,
+"Longitude": -8.625217080116272 ,
+"speedKmh": 9.21 ,
+"timestamp": "2023-05-05 22:00:13.793"
+}
+]
+
+}

@@ -1,3 +1,0 @@
-Information to take into account:
--All datasets in this folder were created with an old csv and json structure and headers.
--In most of the datasets in this folder, the phone was placed in a vertical portrait position.

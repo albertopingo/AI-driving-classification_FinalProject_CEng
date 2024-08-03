@@ -1,0 +1,13 @@
+<Measurements BMW e36>
+20kmh 0kmh neutral gear: 90m
+30kmh 0kmh neutral gear: 190m
+40kmh 0kmh neutral gear: 310m
+50kmh 0kmh neutral gear: 470m
+60kmh 0kmh neutral gear: 690m
+
+<Measurements Honda Jazz>
+20kmh 0kmh neutral gear: 70m
+30kmh 0kmh neutral gear: 120m
+40kmh 0kmh neutral gear: 210m
+50kmh 0kmh neutral gear: 415m
+60kmh 0kmh neutral gear: 600m
