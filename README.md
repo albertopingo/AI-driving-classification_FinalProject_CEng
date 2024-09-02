@@ -1,30 +1,43 @@
 # AI Driving Classification
 
-## Description
-This project implements a Long Short-Term Memory (LSTM) neural network model for time series prediction using accelerometer and gyroscope data. The model is trained on datasets captured from various sources under different motion scenarios.
+## Project Overview
+This project investigates the use of Artificial Intelligence (AI) and Deep Learning (DL) techniques to analyze and classify different driving behaviors using sensor data collected from mobile devices. The study focuses on Recurrent Neural Networks (RNN), particularly Long Short-Term Memory (LSTM) architectures, to develop a system capable of classifying driving behaviors such as acceleration, braking, cornering, and navigating roundabouts.
 
-## Tech Stack
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Keras
+### Motivation
+The motivation for this project is to enhance road safety by analyzing driving behaviors in real-time using the sensors available in smartphones. The goal is to create an accessible and effective solution for detecting and classifying various driving styles, thereby contributing to accident prevention and promoting responsible driving.
 
-## Design
-The project consists of Python scripts for data loading, preprocessing, model building, training, and prediction. It utilizes the Keras library for implementing the LSTM model. Visualization of results can be integrated for a better understanding of the model's performance.
-
-## Features
-- Utilizes LSTM architecture for time series prediction.
-- Handles data preprocessing including scaling.
-- Allows comparison of predicted values with actual values.
-- Supports training on multiple datasets.
-
-## How to Run the Project
-1. Clone the repository.
-2. Ensure that the dataset files are available in the specified paths or adjust the paths accordingly in the script.
-3. Run the `main.py` script.
-
-## Contributors
+### Authors
 - Alberto Pingo ([@albertopingo](https://github.com/albertopingo))
 - João Castro ([@jcastroo](https://github.com/jcastroo))
+
+
+# Methodology
+The project is approached from two perspectives:
+
+First Approach: Analyzes data from a complete trip by segmenting sensor data (accelerometer, gyroscope) to classify driving patterns over an entire journey. Architectures such as Stacked LSTM, Bidirectional LSTM, and Convolutional LSTM were applied.
+
+Second Approach: Focuses on specific driving scenarios like acceleration, braking, and cornering, with pre-classified driving styles as "Slow," "Normal," and "Aggressive." This approach allows the development of models that can classify diverse behavior patterns in different driving situations.
+
+### Key Technologies
+Python: The primary programming language used for model development.
+
+TensorFlow & Keras: Libraries used for building and training the neural network models.
+
+Pandas, NumPy, Matplotlib, Seaborn: For data manipulation, analysis, and visualization.
+
+### Key Directories
+- datasets/: Contains the datasets used for training and testing the models.
+- code/: Contains Jupyter notebooks and models for both approaches.
+  - first-approach/: Code for analyzing a complete trip using various LSTM architectures.
+  - second-approach/: Code for specific driving scenarios classified into "Slow," "Normal," and "Aggressive."
+- extras/, others/, publications/: Additional resources, references, and publications related to the project.
+
+## Acknowledgments
+We would like to express our gratitude to the following individuals and groups:
+- Professors Sílvio Priem Mendes, Anabela Moreira Bernardino, and Paulo Jorge Gonçalves Loureiro for their guidance, support, and availability throughout the development of this project.
+- Students who developed the Vehicle Tracking Application, which was instrumental in obtaining the datasets for this project. Your work provided the necessary tools for our data collection and analysis efforts.
+- All the professors who accompanied us throughout our course, whose knowledge was fundamental to the completion of this project as well as our academic and personal growth.
+
+
+
 
