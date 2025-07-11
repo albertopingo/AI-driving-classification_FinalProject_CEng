@@ -39,7 +39,7 @@ We would like to express our gratitude to the following individuals and groups:
 - All the professors who accompanied us throughout our course, whose knowledge was fundamental to the completion of this project as well as our academic and personal growth.
 
 ## License
-The source code and datasets located in the `code/`, `extras/`, `others/`, `FINAL_SUBMISSION/`, and datasets in `datasets/` directories are licensed under the [MIT License](LICENSE.md).  
-All documentation, academic content, and presentation materials — including reports, papers, and slides — found in the `publications/`, `extras/` and `others/` and `FINAL_SUBMISSION/` directories are licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](LICENSE-CC-BY-4.0.md). [![CC BY 4.0](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
+The source code and datasets located in the `code/`, `others/`, `publications/FINAL_SUBMISSION/`, and datasets in `datasets/` directories are licensed under the [MIT License](LICENSE.md).  
+All documentation, academic content, and presentation materials — including reports, papers, and slides — found in the `publications/` and `others/` directories are licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](LICENSE-CC-BY-4.0.md). [![CC BY 4.0](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
 
 
